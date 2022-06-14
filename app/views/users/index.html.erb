@@ -1,0 +1,34 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <% if 
+
+      <table class="table">
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>name</th>
+            <th>
+
+            </th>
+          </tr>
+          <th>introduction</th>
+          <th></th>
+        </tbody>
+      </table>
+      <%= link_to "edit", edit_user_path(current_user) %>
+      <h2>New book</h2>
+      <%= form_with model: @book, url: "/books", local: true do |f| %>
+
+      <h4>Title</h4>
+      <%= f.text_field :title %>
+
+      <h4>Opinion</h4>
+      <%= f.text_area :body %>
+
+      <%= f.submit 'Create Book' %>
+      <% end %>
+    </div>
+  </div>
+</div>
