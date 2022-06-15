@@ -30,31 +30,3 @@
         <%= f.submit 'Create Book' %>
         <% end %>
       </div>
-      <div class="col-md-8 offset-md-1">
-        <h2>Books</h2>
-        <table class="table table-hover table-inverse">
-          <thead>
-            <tr>
-              <% @books.each do |book| %>
-              <th></th>
-              <th>Title</th>
-
-              <th>Opinion</th>
-
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <td>
-            <%= link_to user_path(@user.id) do %>
-            <%= image_tag @user.get_image(100,100) %>
-            <% end %>
-            </td>
-            <td><span><%= link_to book.title, book_path(book.id) %></span></td>
-            <td><sapn><%= book.body %></sapn></td>
-          </tbody>
-          <% end %>
-        </table>
-      </div>
-    </div>
-</div>
