@@ -14,7 +14,7 @@
   </head>
 
   <body>
-      
+
       <header>
           <nav class="navbar navbar-expend-lg navbar-dark bg-dark">
               <div class="container">
@@ -28,7 +28,7 @@
                       <ul class="navbar-nav ml-auto">
                             <% if user_signed_in? %>
                             <li>
-                                <%= link_to "Home", root_path, class:'nav-link text-light' %>
+                                <%= link_to "Home", user_path(current_user), class:'nav-link text-light' %>
                             </li>
                             <li>
                                 <%= link_to "Users", users_path, class:'nav-link text-light' %>

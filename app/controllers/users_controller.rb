@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
     @user = current_user
+    @book = Book.new
   end
 
   def show
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
     if user.update(user_params)
        flash[:success] = "You have updated user successfully."
        redirect_to users_path(user.id)
-   end
+    end
   end
 
   private
