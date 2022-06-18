@@ -1,4 +1,4 @@
-<%= render 'list', user: @user %>
+<%= render 'list', user: @user, book: @new_book %>
 
 <div class="col-md-8 offset-md-1">
     <h2>Book detail</h2>
@@ -17,14 +17,14 @@
                 </td>
                 <td>
                     <% if user_signed_in? %>
-                      <% if current_user.id %>
-                        <%= link_to 'edit', edit_book_path(@book.id) %>
+                      <% if @book.user == current_user %>
+                        <%= link_to 'edit', edit_book_path(@book.id),class:"btn btn-sm btn-success" %>
                       <% end %>
                     <% end %>
                 </td>
                 <td> <% if user_signed_in? %>
-                      <% if current_user.id %>
-                        <%= link_to 'destroy', book_path(@book.id), method: :delete, "date-confirm" => "本当に消しますか？" %>
+                      <% if @book.user == current_user %>
+                        <%= link_to 'destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-sm btn-danger" %>
                       <% end %>
                     <% end %>
                 </td>
