@@ -19,7 +19,7 @@
                 <%= f.text_field :title, autofocus: true, id:"book_title", placeholder:"", class:"form-control" %><br>
                 <label for="book_opinion">Opinion</label><br>
                 <%= f.text_area :body, autofocus: true, id:"book_opinion", placeholder:"", class:"form-control" %><br>
-                <%= f.submit "Create Update", class:"btn btn-success" %><br>
+                <%= f.submit "Update Book", class:"btn btn-success" %><br>
                 <p id="notice"></p>
 
                 <%= link_to "Show", book_path(@book.id) %>

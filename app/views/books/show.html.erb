@@ -18,13 +18,13 @@
                 <td>
                     <% if user_signed_in? %>
                       <% if @book.user == current_user %>
-                        <%= link_to 'edit', edit_book_path(@book.id),class:"btn btn-sm btn-success" %>
+                        <%= link_to 'Edit', edit_book_path(@book.id),class:"btn btn-sm btn-success" %>
                       <% end %>
                     <% end %>
                 </td>
                 <td> <% if user_signed_in? %>
                       <% if @book.user == current_user %>
-                        <%= link_to 'destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-sm btn-danger" %>
+                        <%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn btn-sm btn-danger" %>
                       <% end %>
                     <% end %>
                 </td>
