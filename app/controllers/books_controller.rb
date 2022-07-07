@@ -11,6 +11,7 @@ class BooksController < ApplicationController
       }
     @book = Book.new
     @user = current_user
+    @book_detail = Book.find_by(params[:id])
   end
 
   def create
@@ -31,6 +32,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     @book_comment = BookComment.new
+    @book_detail = Book.find(params[:id])
+    unless ViewCount.find_by(user_id: current_user.id, book_id: @book_detail.id)
+      current_user.view_counts.create(book_id: @book_detail.id)
+    end
 
   end
 
